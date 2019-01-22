@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>React Hello World</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+<body>
+    <div id="application-root"></div>
+
+<script
+  src="https://unpkg.com/react@16/umd/react.development.js"
+  crossorigin>
+</script>
+<script
+  src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+  crossorigin>
+</script>
+<script
+src="https://unpkg.com/babel-standalone@6/babel.min.js"
+crossorigin>
+</script>
+<script type="text/babel">
+    const appRoot = document.querySelector('#application-root')
+
+    const helloWorldH1 = <h1>Hello World</h1>;
+
+    function App(props) {
+        console.log(props);
+        return (
+            <main role="main">
+                <header role="banner">
+                    {props.children}
+                </header>
+                <section>
+                    <div className="imgDiv">
+                        <img src = "https://ia.media-imdb.com/images/M/MV5BMTY5NzE3NzU3MF5BMl5BanBnXkFtZTgwMjg0NTQ5MDE@._V1_UX214_CR0,0,214,317_AL_.jpg" alt="Sally looking confident"></img>
+                    </div>
+                    <div>
+                        <h2>Contact</h2>
+                        <address>
+                            <ul>
+                                <li>Sally Student</li>
+                                <li><a href="mailto:steven.glen.wagner@gmail.com?">made.up@gmail.com</a></li>
+                                <li>570-555-5555</li>
+                            </ul>
+                        </address>
+                    </div>
+                </section>
+                <section>
+                    <h2 className="no_float">Education</h2>
+                    <ul>
+                        <li>Real College 1234 Not Fake Rd. Real Place, CO</li>
+                    </ul>
+                </section>
+                <section role = "region">
+                    <h2>Employment History</h2>
+                    <ul>
+                        <li><strong>Not Made Up Burgers</strong> (2010-2017) <em>VP of Reality</em><p>Performed real work with real people in a non-fake enviroment.</p></li>
+                        <li><strong>Real Bussiness-R-us</strong> (1890-2010) <em>Real Person Sales Consultant</em><p>Talked to real people and sold real things at this very real company. Was fired due to age discrimination.</p></li>
+                    </ul>
+                </section>
+            </main>);
+                 
+    }
+
+let student= 'Sally Student';
+
+// Use App Component:
+// insert the App's element tree into the #application-root
+    ReactDOM.render(<App className="new-class"> 
+        <h1>{student}</h1>
+        </App>, 
+        document.querySelector('#application-root'));
+</script>
+</body>
+</html>
